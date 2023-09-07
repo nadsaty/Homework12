@@ -1,5 +1,7 @@
 package HW12;
 
+import java.util.Objects;
+
 public class Author {
     private String authorFirstName;
     private String authorLastName;
@@ -23,5 +25,15 @@ public class Author {
 
     public void setAuthorLastName () {
         this.authorLastName = authorLastName;
+    }
+
+    //Применение метода equals()
+    public boolean equals(Object obj) {
+        Author otherAuthor = (Author) obj;
+        return this.authorFirstName == otherAuthor.authorFirstName;
+    }
+
+    public int hashCode() {
+        return java.util.Objects.hash(authorFirstName, authorLastName);
     }
 }

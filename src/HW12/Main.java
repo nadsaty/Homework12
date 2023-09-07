@@ -12,6 +12,20 @@ public class Main {
         System.out.println("Книга - " + idiot.getBookName() + ", " + idiot.getBookYear() + " год, " + idiot.getBookAuthor().getAuthorFirstName() + " " + idiot.getBookAuthor().getAuthorLastName());
 
         warAndPeace.setBookYear(1869);
-        System.out.println("\n *поправка: год издания книги 'Война и мир' - " + warAndPeace.getBookYear());
+        System.out.println("\n *поправка: год издания книги 'Война и мир' - " + warAndPeace.getBookYear() + "\n");
+
+        //Применение метода toString()
+        Author hunterTompson = new Author("Хантер", "Томпсон");
+        System.out.println(new Book ("Поколение свиней", 1988, hunterTompson));
+
+        //Применение метода equals()
+        Author mikhailBulgakov1 = new Author("Михаил", "Булгаков");
+        Author mikhailBulgakov2 = new Author("Михаил", "Булгаков");
+        System.out.println("\n" + mikhailBulgakov1.equals(mikhailBulgakov2) + "\n");
+
+        //Применение метода hashCode()
+        if (mikhailBulgakov1.hashCode() == mikhailBulgakov2.hashCode()) {
+            System.out.println(true);
+        }
     }
 }
