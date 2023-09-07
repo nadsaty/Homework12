@@ -3,10 +3,16 @@ package HW12;
 public class Book {
     private String bookName;
     private int bookYear;
+    private Author bookAuthor;
 
-    public Book (String bookName, int bookYear) {
+    public Book (String bookName, int bookYear, Author bookAuthor) {
         this.bookName = bookName;
         this.bookYear = bookYear;
+        this.bookAuthor = bookAuthor;
+    }
+
+    public Author getBookAuthor () {
+        return this.bookAuthor;
     }
 
     public String getBookName () {
@@ -24,5 +30,4 @@ public class Book {
     public void setBookYear (int bookYear) {
         this.bookYear = bookYear;
     }
-    //
 }

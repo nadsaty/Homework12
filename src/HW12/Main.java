@@ -2,20 +2,16 @@ package HW12;
 
 public class Main {
     public static void main(String[] args) {
-        Book warAndPeace = new Book ("Война и мир", 1886);
-        System.out.println("Книга - " + warAndPeace.getBookName() + ", " + warAndPeace.getBookYear() + " год");
 
         Author levTolstoy = new Author("Лев", "Толстой");
-        System.out.println("Автор - " + levTolstoy.getAuthorFirstName() + " " + levTolstoy.getAuthorLastName());
-
-        Book idiot = new Book("Бесы", 1872);
-        System.out.println("Книга - " + idiot.getBookName() + ", " + idiot.getBookYear() + " год");
+        Book warAndPeace = new Book ("Война и мир", 1886, levTolstoy);
+        System.out.println("Книга - " + warAndPeace.getBookName() + ", " + warAndPeace.getBookYear() + " год, " + warAndPeace.getBookAuthor().getAuthorFirstName() + " " + warAndPeace.getBookAuthor().getAuthorLastName());
 
         Author fedorDostoevsky = new Author("Федор", "Достоевский");
-        System.out.println("Автор - " + fedorDostoevsky.getAuthorFirstName() + " " + fedorDostoevsky.getAuthorLastName());
+        Book idiot = new Book("Бесы", 1872, fedorDostoevsky);
+        System.out.println("Книга - " + idiot.getBookName() + ", " + idiot.getBookYear() + " год, " + idiot.getBookAuthor().getAuthorFirstName() + " " + idiot.getBookAuthor().getAuthorLastName());
 
         warAndPeace.setBookYear(1869);
         System.out.println("\n *поправка: год издания книги 'Война и мир' - " + warAndPeace.getBookYear());
     }
-    //
 }

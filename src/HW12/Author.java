@@ -24,5 +24,4 @@ public class Author {
     public void setAuthorLastName () {
         this.authorLastName = authorLastName;
     }
-    //
 }
