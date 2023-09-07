@@ -17,4 +17,5 @@ public class Main {
         warAndPeace.setBookYear(1869);
         System.out.println("\n *поправка: год издания книги 'Война и мир' - " + warAndPeace.getBookYear());
     }
+    //
 }
