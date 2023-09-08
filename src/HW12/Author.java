@@ -27,13 +27,28 @@ public class Author {
         this.authorLastName = authorLastName;
     }
 
-    //Применение метода equals()
-    public boolean equals(Object obj) {
-        Author otherAuthor = (Author) obj;
-        return this.authorFirstName == otherAuthor.authorFirstName;
-    }
+    //Применение методов equals() и hashCode() вручную:
 
+    /* public boolean equals(Object obj) {
+        Author otherAuthor = (Author) obj;
+        return this.authorFirstName.equals(otherAuthor.authorFirstName) && this.authorLastName.equals(otherAuthor.authorLastName);
+    }
     public int hashCode() {
         return java.util.Objects.hash(authorFirstName, authorLastName);
+    } */
+
+
+    //Сгенерированные методы equals() и hashCode():
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Author author = (Author) object;
+        return Objects.equals(authorFirstName, author.authorFirstName) && Objects.equals(authorLastName, author.authorLastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(authorFirstName, authorLastName);
     }
 }
